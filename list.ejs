@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<title>Notes App</title>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="http://127.0.0.1">Fantasy Fiction Web Designer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="http://127.0.0.1/CharacterSheet.php">Character Sheet <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:3000">Plot Sketches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1/donate.php">Donate</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+   
+   
+   <style type="text/css">
+      
+  #tooltip {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    display: none;
+  }
+  aside {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    background-color: lightgray;
+  }
+  #tooltip[data-show] {
+    display: block;
+  }
+  
+  #arrow,
+  #arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: inherit;
+  }
+  
+  #arrow {
+    visibility: hidden;
+  }
+  
+  #arrow::before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg);
+  }
+  
+  #tooltip[data-popper-placement^='top'] > #arrow {
+    bottom: -4px;
+  }
+  
+  #tooltip[data-popper-placement^='bottom'] > #arrow {
+    top: -4px;
+  }
+  
+  #tooltip[data-popper-placement^='left'] > #arrow {
+    right: -4px;
+  }
+  
+  #tooltip[data-popper-placement^='right'] > #arrow {
+    left: -4px;
+  }
+  
+.main_container {
+  height: 46px;
+  width: auto;
+  padding: 3px;
+  margin: 2px;
+  max-width: 300px;
+  background-color: #555555;
+  align-content: center;
+}
+.container_inner {
+  height: auto;
+  border: none;
+  background-color: #555555;
+  max-width: 290px;
+  vertical-align: center;
+  padding-top: 12px;
+  padding-left: 10px;
+  align-content: center;
+}
+ .num_tiles {
+  width:30px;
+  height: 30px;
+  background-color: #888888;
+  color: #ffffff;
+  font-size: 22px;
+  text-align: center;
+  line-height: 20px;
+  padding: 3px;
+  margin: 1.5px;
+  font-family: verdana;
+  vertical-align: center;
+}
+    form.form-example {
+    display: table;
+    
+}
+
+div.form-example {
+    display: table-row;
+}
+
+label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+
+label {
+    padding-right: 10px;
+}
+.heading1{
+    color:black;
+}
+
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-0lax{text-align:left;vertical-align:top}
+        </style>
+  </head>
+  <body>
+      <h1>Your list is:</h1>
+      
+        <% for(let i=0; i < q.s.length; i++) { %>
+            <table class="tg">
+            <tr>
+                <td><%= q.s[i].Action1 %></td>
+                <td><%= q.s[i].Background1 %></td>
+                <td><%= q.s[i].Climax1 %></td>
+                <td><%= q.s[i].Development1 %></td>
+                <td><%= q.s[i].Ending1 %></td>
+                <td><%= q.s[i].Action2 %></td>
+               <td><%= q.s[i].Background2 %></td>
+               <td><%= q.s[i].Climax2 %></td>
+               <td><%= q.s[i].Development2 %></td>
+               <td><%= q.s[i].Ending2 %></td>
+               <td><%= q.s[i].Action3 %></td>
+                <td><%= q.s[i].Background3 %></td>
+                <td><%= q.s[i].Climax3 %> </td>
+                <td><%= q.s[i].Development3 %></td>
+                <td><%= q.s[i].Ending3 %></td>
+            </table>
+                <p>Record Break</p>
+                 
+            </tr>
+        <% }; %>
+    
+  
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
